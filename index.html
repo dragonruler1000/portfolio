@@ -1,41 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Minecraftchest2's portfolio</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="darkmode.js" defer></script>
-</head>
-<body>
+    <script src="popup-ad.js" defer></script>
+  </head>
+  <body>
     <div class="page-wrapper">
-        <nav class="hamburger-menu">
-            <input id="menu-toggle" type="checkbox" style="display:none;">
-            <label class="menu-icon" for="menu-toggle">☰</label>
-            <ul class="menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/sitelist.html">Sitelist</a></li>
-            <li><a href="/projects.html">Projects</a></li>
-            </ul>
-        </nav>
-        <header>
-            <h1>Zachariah Jackson</h1>
-            <p>Starting web developer | Indi game dev| Musician </p>
-            <label class="dark-mode-toggle">
-                <input type="checkbox" id="darkModeSwitch">
-                Dark Mode
-              </label>             
-        </header>
+      <nav class="hamburger-menu">
+        <input id="menu-toggle" type="checkbox" style="display:none;" />
+        <label class="menu-icon" for="menu-toggle">☰</label>
+        <ul class="menu">
+          <li><a href="/">Home</a></li>
+          <li><a href="/sitelist.html">Sitelist</a></li>
+          <li><a href="/projects.html">Projects</a></li>
+        </ul>
+      </nav>
+      <header>
+        <h1>Zachariah Jackson</h1>
+        <p>Starting web developer | Indi game dev| Musician</p>
+        <label class="dark-mode-toggle">
+          <input type="checkbox" id="darkModeSwitch" />
+          Dark Mode
+        </label>
+      </header>
 
-        <main>
-            <section>
-                <h2>Contact Me</h2>
-                <a href="mailto:contactme@me.minecraftchest2.us" target="_blank" rel="noopener noreferrer">contactme@me.minecraftchest2.us</a>
-            </section>
-        </main>
+      <main>
+        <section>
+          <h2>Contact Me</h2>
+          <a
+            href="mailto:contactme@me.minecraftchest2.us"
+            target="_blank"
+            rel="noopener noreferrer"
+            >contactme@me.minecraftchest2.us</a
+          >
+        </section>
+        <section>
+            <form id="contactForm" action="/contact.php" method="POST" novalidate>
+                <label for="name">Name:</label><br />
+                <input type="text" id="name" name="name" required /><br />
+              
+                <label for="email">Email:</label><br />
+                <input type="email" id="email" name="email" required /><br />
+              
+                <label for="message">Message:</label><br />
+                <textarea id="message" name="message" rows="4" required></textarea><br />
+              
+                <button type="submit">Send</button>
+                <p id="formMessage" style="color: red; display: none;"></p>
+              </form>              
+        </section>
+      </main>
 
-        <footer>
-            <p>&copy; 2025 Zachariah Jackson</p>
-        </footer>
+      <footer>
+        <p>&copy; 2025 Zachariah Jackson</p>
+      </footer>
     </div>
-</body>
+    <div id="fakeAd" class="popup-ad hidden">
+        <div class="popup-content">
+          <span class="close-btn" onclick="closeAd()">&times;</span>
+          <h3>🎉 Congratulations!</h3>
+          <p2>You’ve been selected to view this totally real ad.</p2>
+          <button onclick="closeAd()">Close</button>
+        </div>
+      </div>     
+  </body>
 </html>

@@ -115,12 +115,29 @@ body {
     }
 }
 
+.spoiler-card {
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+    visibility: hidden;
+  }
+  
+  body.spoiler-visible .spoiler-card {
+    opacity: 1;
+    pointer-events: auto;
+    max-height: 1000px; /* should be larger than any card height */
+    visibility: visible;
+  }
+  
+  
 .dark-mode-toggle {
     position: fixed;
     top: 1rem;
     right: 1rem;
     font-size: 1rem;
-    color: white;
+    color: green;
   }
   
   .dark-mode-toggle input {
@@ -249,5 +266,45 @@ body {
   
   .project-card a:hover {
     background: #990000;
+  }
+  
+  /* Hidden by default */
+.hidden {
+    display: none !important;
+  }
+  
+  /* Fullscreen overlay */
+  .popup-ad {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  /* Inner ad box */
+  .popup-content {
+    background: white;
+    color: green;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+  }
+  
+  /* Close button */
+  .close-btn {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    font-size: 1.5rem;
+    cursor: pointer;
   }
   
