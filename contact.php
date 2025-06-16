@@ -10,7 +10,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
 
-    // Recipient email
+    // ✅ Cloudflare Turnstile Verification
+    $turnstileSecret = '0x4AAAAAABhPZY6boooJyIX2X0neXi_HJso'; // Replace with your real secret key
+    $token = $_POST['cf-turnstile-response'] ?? '';
+
+    if (!$token) {
+        http_response_code(400);
+        echo "Turnstile verification failed. Please try again.";
+        exit;
+    }
+
+    $verifyResponse = file_get_contents("https://challenges.cloudflare.com/turnstile/v0/siteverify", false, stream_context_create([
+        "http" => [
+            "method"  => "POST",
+            "header"  => "Content-type: application/x-www-form-urlencoded",
+            "content" => http_build_query([
+                'secret' => $turnstileSecret,
+                'response' => $token,
+                'remoteip' => $_SERVER['REMOTE_ADDR'] ?? null
+            ])
+        ]
+    ]));
+
+    $verification = json_decode($verifyResponse, true);
+    if (!$verification["success"]) {
+        http_response_code(403);
+        echo "Human verification failed. Please try again.";
+        exit;
+    }
+
+    // ✅ Email Handling
     $recipient = "contactme@me.minecraftchest2.us";
     $subject = "New contact from $name";
 
