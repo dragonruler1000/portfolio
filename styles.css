@@ -75,3 +75,122 @@ body {
     cursor: pointer;
     font-size: 2em;
   }
+
+  @keyframes flicker {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+@keyframes glitch {
+    2%, 64% {
+        transform: translate(2px, 0) skew(0deg);
+    }
+    4%, 60% {
+        transform: translate(-2px, 0) skew(0deg);
+    }
+    62% {
+        transform: translate(0, 0) skew(5deg);
+    }
+}
+
+.site-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+  }
+  
+  .site-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+  
+  .site-card:hover {
+    transform: translateY(-4px);
+    background: #222;
+  }
+  
+  .site-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #cc0000;
+  }
+  
+  .site-card p {
+    color: #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  .site-card a {
+    background: #cc0000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .site-card a:hover {
+    background: #990000;
+  }
+
+  project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    justify-content: center;
+    padding: 2rem;
+    width: 100%;
+    max-width: 1000px;
+    box-sizing: border-box;
+  }
+  
+  .project-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: left;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-4px);
+    background: #222;
+  }
+  
+  .project-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #cc0000;
+  }
+  
+  .project-card p {
+    color: #ccc;
+    margin-bottom: 1rem;
+  }
+  
+  .project-card a {
+    background: #cc0000;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .project-card a:hover {
+    background: #990000;
+  }
+  
