@@ -1,4 +1,4 @@
-</br><img src="https://profile-counter.glitch.me/Dragonruler1000-portfio/count.svg" alt="Visitor Counter"/>
+[![pages-build-deployment](https://github.com/dragonruler1000/portfolio/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/dragonruler1000/portfolio/actions/workflows/pages/pages-build-deployment)
 # portfolio
 The code for my portfolio site
 webesite link
